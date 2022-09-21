@@ -10,7 +10,7 @@
 
 ## Tech Stack
 
-**Client:** React, styled-components, framer-motion
+**Client:** React, Typescript ,styled-components , framer-motion
 
 ## Contact US
 
