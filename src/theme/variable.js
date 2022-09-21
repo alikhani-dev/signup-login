@@ -1,6 +1,0 @@
-export const GRADIENT_BACKGROUND = 'linear-gradient(58deg,#3f798a 20%,#2db6e0 100%);'
-export const COLOR_TEXT = '#2db6e0'
-export const COLOR_TEXT_INPUT = 'rgba(200, 200, 200, 1)'
-export const COLOR_BORDER = '#3f798a'
-export const COLOR_TEXT_EMAIL_FORGET = '#555'
-export const COLOR_TEXT_INPUT_FOCUS = '#999'

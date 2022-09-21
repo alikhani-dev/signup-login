@@ -1,20 +1,14 @@
-import { useState } from 'react'
+import { useState, ChangeEvent } from 'react'
 import { useAccount } from '../../context/accountContext'
 import Margin from '../margin'
 import { BoldLink, BoxContainer, FormContainer, Input, MutedLink, SubmitButton } from './Common'
 
 const SingInForm = () => {
 	const { switchSingUp } = useAccount()
-	const [fields, setFields] = useState({
-		email: '',
-		password: '',
-	})
+	const [fields, setFields] = useState({ email: '', password: '' })
 
-	const handleChange = (e) => {
-		setFields({
-			...fields,
-			[e.target.name]: e.target.value,
-		})
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+		setFields({ ...fields, [e.target.name]: e.target.value })
 	}
 
 	return (
