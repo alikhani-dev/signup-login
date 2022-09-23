@@ -1,7 +1,10 @@
 import { useState, ChangeEvent } from 'react'
-import { useAccount } from '../../context/accountContext'
-import Margin from '../margin'
+// * Components :
 import { BoldLink, BoxContainer, FormContainer, Input, MutedLink, SubmitButton } from './Common'
+// * Contexts :
+import { useAccount } from '../../context/accountContext'
+// * Utils :
+import Margin from '../margin'
 
 const SingInForm = () => {
 	const { switchSingUp } = useAccount()
@@ -16,19 +19,19 @@ const SingInForm = () => {
 			<FormContainer>
 				<Input
 					onChange={handleChange}
+					autoComplete='username'
 					value={fields.email}
+					placeholder='Email'
 					type='email'
 					name='email'
-					placeholder='Email'
-					autoComplete='username'
 				/>
 				<Input
+					autoComplete='current-password'
+					placeholder='Password'
 					onChange={handleChange}
 					value={fields.password}
 					type='password'
 					name='password'
-					placeholder='Password'
-					autoComplete='current-password'
 				/>
 			</FormContainer>
 			<Margin height={30} />

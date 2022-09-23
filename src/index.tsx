@@ -1,16 +1,18 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-import Provider from './context'
 import App from './App'
-import GlobalStyle  from './styles/global'
+// * Provider & Context :
+import Provider from './context'
+// * Global styles
+import GlobalStyle from './styles/global'
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+const root = ReactDOM.createRoot(document.getElementById('root')!)
 
 root.render(
 	<StrictMode>
 		<Provider>
 			<App />
-			<GlobalStyle  />
+			<GlobalStyle />
 		</Provider>
-	</StrictMode>
+	</StrictMode>,
 )

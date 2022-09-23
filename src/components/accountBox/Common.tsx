@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+// * Types :
 import { Color } from '../../theme/variable'
 
 export const BoxContainer = styled.div`
