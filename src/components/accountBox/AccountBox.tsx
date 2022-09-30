@@ -1,9 +1,12 @@
-import { motion } from 'framer-motion'
+import { motion, Transition } from 'framer-motion'
 import styled from 'styled-components'
+// * Context :
 import { useAccount } from '../../context/accountContext'
+// * Types :
+import { Color } from '../../theme/variable'
+// * Components :
 import SingInForm from './SingInForm'
 import SingUpForm from './SignUpForm'
-import { Color } from '../../theme/variable'
 
 const BoxContainer = styled.section`
 	width: 350px;
@@ -77,20 +80,20 @@ const backDropVariable = {
 		width: '280%',
 		height: '1040px',
 		borderRadios: '50%',
-		transform: 'rotate(60deg)'
+		transform: 'rotate(60deg)',
 	},
 	collapsed: {
 		width: '140%',
 		height: '520px',
 		borderRadios: '50%',
-		transform: 'rotate(45deg)'
-	}
+		transform: 'rotate(45deg)',
+	},
 }
 
-export const expendingTransition = {
+export const expendingTransition: Transition = {
 	type: 'spring',
-	duration: 2.3,
-	stiffness: 30
+	duration: 1.2,
+	stiffness: 120,
 }
 
 const AccountBox = () => {

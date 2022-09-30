@@ -1,18 +1,13 @@
 import { createContext, useContext, useState, FC, PropsWithChildren } from 'react'
-import { expendingTransition } from '../components/accountBox/AccountBox'
-
-type Context = {
-	switchSingUp: () => void
-	switchSingIn: () => void
-	IsExpended: boolean
-	active: 'singIn' | 'singUp'
-}
+// * Types :
+type Context = { switchSingUp: () => void; switchSingIn: () => void; active: Form; IsExpended: boolean }
+type Form = 'singIn' | 'singUp'
 
 const AccountContext = createContext<Context>({
 	switchSingUp() {},
 	switchSingIn() {},
 	IsExpended: false,
-	active: 'singIn'
+	active: 'singIn',
 })
 
 export const useAccount = () => {
@@ -25,27 +20,28 @@ export const useAccount = () => {
 
 const Provider: FC<PropsWithChildren> = ({ children }) => {
 	const [IsExpended, setExpended] = useState(false)
-	const [active, setActive] = useState<'singIn' | 'singUp'>('singIn')
+	const [active, setActive] = useState<Form>('singIn')
+	const delay = 1.2
 
 	const playExpandingAnimation = () => {
 		setExpended(true)
 		setTimeout(() => {
 			setExpended(false)
-		}, expendingTransition.duration * 1000 - 1500)
+		}, delay * 1000)
 	}
 
 	const switchSingUp = () => {
 		playExpandingAnimation()
 		setTimeout(() => {
 			setActive('singUp')
-		}, 400)
+		}, delay * 1000)
 	}
 
 	const switchSingIn = () => {
 		playExpandingAnimation()
 		setTimeout(() => {
 			setActive('singIn')
-		}, 400)
+		}, delay * 1000)
 	}
 
 	return (
